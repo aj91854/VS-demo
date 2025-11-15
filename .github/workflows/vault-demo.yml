@@ -23,8 +23,8 @@ jobs:
         VAULT_SKIP_VERIFY: true
       run: |
         echo "Reading secrets from Vault..."
-        DB_USER=$(vault kv get -field=db_user secret/demo)
-        DB_PASS=$(vault kv get -field=db_pass secret/demo)
+        DB_USER=$(vault kv get -field=db_user secret/data/demo)
+        DB_PASS=$(vault kv get -field=db_pass secret/data/demo)
 
         echo "DB_USER: $DB_USER"
         echo "DB_PASS: $DB_PASS"
