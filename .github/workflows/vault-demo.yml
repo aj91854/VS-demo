@@ -18,7 +18,7 @@ jobs:
 
     - name: Retrieve secret from Vault
       env:
-        VAULT_ADDR: tcp://0.tcp.eu.ngrok.io:10134
+        VAULT_ADDR: https://rochel-nontroubling-translationally.ngrok-free.dev
         VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
         VAULT_SKIP_VERIFY: true
       run: |
