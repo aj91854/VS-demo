@@ -20,6 +20,7 @@ jobs:
       env:
         VAULT_ADDR: https://rochel-nontroubling-translationally.ngrok-free.dev
         VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+        VAULT_SKIP_VERIFY: true
       run: |
         echo "Reading secrets from Vault..."
         DB_USER=$(vault kv get -field=db_user secret/demo)
