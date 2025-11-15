@@ -1,0 +1,29 @@
+name: Vault demo
+
+on:
+  push:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install Vault
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y wget unzip
+        wget https://releases.hashicorp.com/vault/1.21.0/vault_1.21.0_linux_amd64.zip
+        unzip vault_1.17.2_linux_amd64.zip
+        sudo mv vault /usr/local/bin/
+
+    - name: Retrieve secret from Vault
+      env:
+        VAULT_ADDR: https://rochel-nontroubling-translationally.ngrok-free.dev
+        VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
+      run: |
+        echo "Reading secrets from Vault..."
+        DB_USER=$(vault kv get -field=db_user secret/demo)
+        DB_PASS=$(vault kv get -field=db_pass secret/demo)
+
+        echo "DB_USER: $DB_USER"
+        echo "DB_PASS: [hidden]"
