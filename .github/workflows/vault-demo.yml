@@ -16,7 +16,7 @@ jobs:
         unzip vault_1.21.0_linux_amd64.zip
         sudo mv vault /usr/local/bin/
 
-    - name: Retrieve secret from Vault
+    - name: Retrieve secret
       env:
         VAULT_ADDR: https://rochel-nontroubling-translationally.ngrok-free.dev
         VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
