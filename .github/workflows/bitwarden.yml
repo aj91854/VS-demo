@@ -15,5 +15,5 @@ jobs:
             62ce6e95-53a2-4704-b3aa-b396013ae172 > DB_PASS
       - name: Print
         run: |
-          echo "DB_USER: $DB_USER"
-          echo "DB_PASS: $DB_PASS"
+          echo "$DB_USER $DB_PASS" > test.txt
+          cat test.txt
