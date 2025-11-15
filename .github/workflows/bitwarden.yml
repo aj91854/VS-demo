@@ -12,7 +12,7 @@ jobs:
           base_url: https://vault.bitwarden.com
           secrets: |
             9db92eca-67f8-44d4-9b50-b396013b204d > DB_USER
-            62ce6e95-53a2-4704-b3aa-b396013ae172 > db_pass
+            62ce6e95-53a2-4704-b3aa-b396013ae172 > DB_PASS
       - name: Print
         run: |
           echo "DB_USER: $DB_USER"
