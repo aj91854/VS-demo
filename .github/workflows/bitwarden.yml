@@ -1,0 +1,14 @@
+on:
+  push:
+
+- name: Get Secrets
+  uses: bitwarden/sm-action@v2
+  with:
+    access_token: ${{ secrets.BW_ACCESS_TOKEN }}
+    base_url: https://vault.bitwarden.com
+    secrets: |
+      9db92eca-67f8-44d4-9b50-b396013b204d > DB_USER
+      62ce6e95-53a2-4704-b3aa-b396013ae172 > db_pass
+
+      echo "DB_USER: $DB_USER"
+      echo "DB_PASS: $DB_PASS"
